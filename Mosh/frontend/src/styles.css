@@ -1,0 +1,212 @@
+:root {
+  color-scheme: light dark;
+  --bg: #faf5ff;
+  --text-dark: #312C62;
+  --primary: rgb(154 2 57);
+  --light: #e5e7eb;
+  --card-bg: #f0e5ff;
+  --dark-gray: #717173;
+  --accent: #ffe56f;
+  --border-subtle: #1f2937;
+  --accent-strong: rgba(56, 189, 248, 0.4);
+  --danger-soft: rgba(248, 113, 113, 0.2);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+  --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.4);
+}
+
+/* Gelica font faces (local) */
+@font-face {
+  font-family: "gelica";
+  src: url("./assets/fonts/Fontspring-DEMO-gelica-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("./assets/fonts/Fontspring-DEMO-gelica-italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Area Inktrap font face (local) */
+@font-face {
+  font-family: "area-inktrap";
+  src: url("./assets/fonts/fonnts.com-Area_Inktrap_Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gelica";
+  src: url("./assets/fonts/Fontspring-DEMO-gelica-bolditalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "gelica", "area-inktrap", system-ui, "SF Pro Text", sans-serif;
+  background: var(--bg);
+  color: var(--text-dark);
+}
+
+.main{
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.main-banner{
+  width: 100%;
+  display: flex;
+  gap: 6rem;
+  margin-bottom: 20px;
+}
+.banner-board{
+  flex: 1 1 30%;
+}
+.banner-gif{
+  flex: 1 1 70%;
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.banner-desc{
+  font-family: "gelica";
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.banner-title{
+  font: "area-inktrap";
+  font-weight: 500;
+  font-size: 4rem;
+}
+.blowdry{
+  width: 100%;
+}
+
+.app-main {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.9));
+  border-radius: var(--radius-lg);
+  padding: 20px 20px 24px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: var(--shadow-soft);
+}
+
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button {
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.16s ease-out;
+}
+
+.primary-button {
+  width: 18rem;
+  height: 3rem;
+  background: var(--primary);
+  color: var(--light);
+  font-weight: 600;
+}
+
+.primary-button:hover:not(:disabled) {
+  box-shadow: 0 18px 40px rgba(56, 189, 248, 0.35);
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+}
+
+.secondary-button {
+  background: var(--bg);
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+}
+.secondary-button:disabled {
+  background-color: var(--bg);
+  border-color: var(--dark-gray);
+  color: var(--dark-gray);
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: var(--card-bg);
+}
+
+.ghost-button {
+  background: transparent;
+  border-color: transparent;
+  color: var(--dark-gray);
+}
+
+.ghost-button:hover {
+  color: var(--light);
+  border-color: rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.empty-state {
+  margin: 0;
+  padding: 32px 24px;
+  border-radius: var(--radius-md);
+  border: 1px dashed rgba(148, 163, 184, 0.35);
+  color: var(--dark-gray);
+  text-align: center;
+  background: var(--card-bg);
+}
+
+@media (max-width: 900px) {
+  .main{
+    padding-inline: 12px;
+  }
+
+  .main-banner{
+    flex-direction: column;
+  }
+}
+
